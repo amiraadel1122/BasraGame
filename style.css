@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-image: url('images/back.jpg');
+  background-size: contain;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-rows: 200px 260px 200px;
+  grid-template-areas: "top""center""bottom";
+  color: rgb(191, 191, 204);
+}
+
+.top {
+  grid-area: top;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "compCards compScore";
+  align-items: center;
+  margin-left: 24%;
+}
+
+.compCards {
+  grid-area: compCards;
+  border: 2px solid rgb(114, 199, 204);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "card1 card2 card3 card4";
+  grid-gap: 10px;
+  width: 350px;
+  justify-self:center;
+}
+
+.card1, .card2, .card3, .card4 {
+  border: 2px solid rgb(241, 66, 224);
+  border-radius: 10px;
+  height: 102px;
+  width: 70px;
+  background-size: contain;
+   -webkit-transition:-webkit-transform 0.5s;
+   transition:transform 0.5s;
+}
+
+.card1 {
+  grid-area: card1;
+  background-image: url('images/facedown.png');
+}
+
+.card2 {
+  grid-area: card2;
+  background-image: url('images/facedown.png');
+}
+
+.card3 {
+  grid-area: card3;
+  background-image: url('images/facedown.png');
+}
+
+.card4 {
+  grid-area: card4;
+  background-image: url('images/facedown.png');
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.compScore {
+  grid-area: compScore;
+  border: 2px solid rgb(114, 199, 204);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+  justify-self: center;
+  align-items: center;
+}
+
+.center {
+  grid-area: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "deckCards game round";
+  align-items: center;
+}
+
+.deckCards {
+  grid-area: deckCards;
+  border: 2px solid rgb(114, 199, 204);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  grid-template-rows: 50px 50px 50px;
+  grid-template-areas: "deck""button""cards";
+  display: grid;
+  height: 100%;
+  width: 60%;
+  justify-self: center;
+}
+
+.deck {
+  grid-area: deck;
+  text-align: center;
+  color: rgb(163, 25, 149);
+}
+
+.button {
+  grid-area: button;
+  background: linear-gradient(rgb(42, 4, 38), rgb(212, 87, 199));
+  border-style: none;
+  border-radius: 40px;
+  width: 50%;
+  font-size: 25px;
+  justify-self: center;
+  box-shadow: 5px 5px 10px rgba(211, 128, 222, 0.92);
+}
+
+.cards {
+  grid-area: cards;
+  /* border: 2px solid rgb(241, 66, 224); */
+  border-radius: 10px;
+  height: 150px;
+  width: 103px;
+  background-size: contain;
+  justify-self: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-image: url('images/facedown.png');
+  box-shadow: 10px 10px 5px rgba(47, 48, 48, 0.78);
+}
+
+.game {
+  grid-area: game;
+      border: 2px solid rgb(114, 199, 204);
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      /* display: grid; */
+      display: inline-flex;
+      flex-wrap: wrap;
+      width: 500px;
+      height: 200px;
+      justify-content:center;
+      /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+      /* grid-template-areas: "card1 card2 card3 card4"; */
+      /* grid-gap: 10px; */
+}
+.game .card{
+  width: 65px;
+height: 94px
+}
+
+.round {
+  grid-area: round;
+  border: 2px solid rgb(114, 199, 204);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+  justify-self: center;
+  align-items: center;
+}
+
+.bottom {
+  grid-area: bottom;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "playerCards playerScore";
+  align-items: center;
+  margin-left: 24%;
+}
+
+.playerCards {
+  grid-area: playerCards;
+  border: 2px solid rgb(114, 199, 204);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "card1 card2 card3 card4";
+  width: 350px;
+  justify-self:center;
+}
+
+.playerScore {
+  grid-area: playerScore;
+  border: 2px solid rgb(114, 199, 204);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  width: 50%;
+  height: 50%;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+}
+.card:hover{
+  box-shadow: -5px -5px 5px 1px rgba(54, 61, 83, 0.83), 5px 5px 5px -5px rgba(54, 61, 83, 0.83), 5px 5px 5px rgba(54, 61, 83, 0.83);
+  transform: translateZ(40px);
+}
